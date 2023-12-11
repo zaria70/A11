@@ -1,0 +1,383 @@
+/* the styles for the elements */
+* {
+    margin: 0;
+    padding: 0;
+}
+html {
+    background-color: white;
+}
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 100%;
+    width: 98%;
+    max-width: 960px;
+    margin: 0 auto;
+    border: 3px solid #931420;
+    background-color: #fffded;
+}
+a:focus, a:hover {
+    font-style: italic;
+}
+/* the styles for the header */
+header {
+    padding: 1.5em 0 2em 0;
+    border-bottom: 3px solid #931420;
+        background-image: -moz-linear-gradient(
+        30deg, #f6bb73 0%, #f6bb73 30%, white 50%, #f6bb73 80%, #f6bb73 100%);
+    background-image: -webkit-linear-gradient(
+        30deg, #f6bb73 0%, #f6bb73 30%, white 50%, #f6bb73 80%, #f6bb73 100%);
+    background-image: -o-linear-gradient(
+        30deg, #f6bb73 0%, #f6bb73 30%, white 50%, #f6bb73 80%, #f6bb73 100%);
+    background-image: linear-gradient(
+        30deg, #f6bb73 0%, #f6bb73 30%, white 50%, #f6bb73 80%, #f6bb73 100%);
+}
+header h2 {
+    font-size: 175%;
+    color: #800000;
+}
+header h3 {
+    font-size: 130%;
+    font-style: italic;
+}
+header img {
+    float: left;
+    padding: 0 3.75%;
+}
+.shadow {
+    text-shadow: 2px 2px 2px #800000;
+}
+/* the styles for the navigation menu */
+#nav_menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+#nav_menu ul li {
+    float: left;
+    width:20%;
+}
+#nav_menu ul li a {
+    display: block;
+    text-align: center;
+    padding: 1em 0;
+    text-decoration: none;
+    background-color: #800000;
+    color: white;
+    font-weight: bold;
+}
+#nav_menu a.current {
+    color: yellow;
+}
+#nav_menu ul ul {
+    display: none;
+    width: 100%;
+    position: absolute;
+    top: 100%;
+}
+#nav_menu ul ul li {
+    float: none;
+}
+#nav_menu ul li:hover > ul {
+    display: block;
+}
+#nav_menu > ul::after {
+    content: "";
+    clear: both;
+    display: block;
+}
+
+/* the styles for the section */
+section {
+    width: 65.625%;
+    float: right;
+    padding: 0 2.5% 20px 2.5%;
+}
+section h1 {
+    font-size: 150%;
+    padding: .5em 0 .25em 0;
+    margin: 0;
+}
+section h2 {
+    color: #800000;
+    font-size: 130%;
+    padding: .5em 0 .25em 0;
+}
+section p {
+    padding-bottom: .5em;
+}
+section blockquote {
+    padding: 0 2em;
+    font-style: italic;
+}
+section ul {
+    padding: 0 0 .25em 1.25em;
+    list-style-type: circle;
+}
+section li {
+    padding-bottom: .35em;
+}
+
+/* the styles for the article */
+article {
+    padding: .5em 0;
+    border-top: 2px solid #800000;
+    border-bottom: 2px solid #800000;
+}
+article h2 {
+    padding-top: 0;
+}
+article h3 {
+    font-size: 105%;
+    padding-bottom: .25em;
+}
+article img {
+    float: right;
+    max-width: 40%;
+    min-width: 150px;
+    margin: .5em 0 1em 1em;
+    border: 1px solid black;
+}
+
+/* the styles for the aside */
+aside {
+    width: 26.875%;
+    float: right;
+    padding: 0 0 20px 2.5%;
+}
+aside h2 {
+    color: #800000;
+    font-size: 130%;
+    padding: .5em 0 .25em 0;
+}
+
+aside h3 {
+    font-size: 105%;
+    padding-bottom: .25em;
+}
+aside img {
+    padding-bottom: 1em;
+}
+
+/* the styles for the footer */
+footer {
+    background-color: #931420;
+    clear: both;
+
+}
+footer p {
+    text-align: center;
+    color: white;
+    padding: 1em 0;
+}
+
+/* style for mobile */
+
+#mobile_menu {
+    display: none;
+}
+
+@media only screen and (max-width: 730px) {
+    section h1 {
+        font-size: 125%
+    }
+    section h2, aside h2 {
+        font-size: 110%;
+    }
+    aside h3 a {
+        font-size: 85%;
+    }
+}
+
+@media only screen and (max-width: 645px){
+    header img{
+        float: none;
+    }
+    header{
+        text-align: center;
+    }
+    section{
+        float: none;
+        width:95%
+    }
+    aside{
+        float: none;
+        width: 95%;
+        padding-right: 2.5%;
+    }
+    article img{
+        max-width: 30%;
+    }
+    aside{
+        column-count:2;
+    }
+    #nav_menu{
+        display: none;
+    }
+    #mobile_menu{
+        display: block;
+    }
+    .slicknav_menu{
+        background-color: #800000 !important;
+    }
+}
+
+@media only screen and (max-width:415px){
+    body{
+        font-size: 90%;
+    }
+}
+
+-----------------------------------------------------------------------------
+
+styles/slicknav.css  :
+
+-----------------------------------------------------------------------------
+
+/*
+    Mobile Menu Core Style
+*/
+
+.slicknav_btn {
+    position: relative;
+    display: block;
+    vertical-align: middle;
+    float: right;
+    padding: 0.438em 0.625em 0.438em 0.625em;
+    line-height: 1.125em;
+    cursor: pointer;
+}
+.slicknav_menu .slicknav_menutxt {
+    display: block;
+    line-height: 1.188em;
+    float: left;
+}
+.slicknav_menu .slicknav_icon {
+    float: left;
+    margin: 0.188em 0 0 0.438em;
+}
+.slicknav_menu .slicknav_no-text {
+    margin: 0
+}
+.slicknav_menu .slicknav_icon-bar {
+    display: block;
+    width: 1.125em;
+    height: 0.125em;
+    -webkit-border-radius: 1px;
+    -moz-border-radius: 1px;
+    border-radius: 1px;
+    -webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
+    -moz-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
+}
+.slicknav_btn .slicknav_icon-bar + .slicknav_icon-bar {
+    margin-top: 0.188em
+}
+.slicknav_nav {
+    clear: both
+}
+.slicknav_nav ul, .slicknav_nav li {
+    display: block
+}
+.slicknav_nav .slicknav_arrow {
+    font-size: 0.8em;
+    margin: 0 0 0 0.4em;
+}
+.slicknav_nav .slicknav_item {
+    display: block;
+    cursor: pointer;
+}
+.slicknav_nav a {
+    display: block
+}
+.slicknav_nav .slicknav_item a {
+    display: inline
+}
+.slicknav_menu:before, .slicknav_menu:after {
+    content: " ";
+    display: table;
+}
+.slicknav_menu:after {
+    clear: both
+}
+/* IE6/7 support */
+.slicknav_menu {
+*zoom: 1
+}
+/*
+    User Default Style
+    Change the following styles to modify the appearance of the menu.
+*/
+
+.slicknav_menu {
+    font-size: 16px;
+}
+/* Button */
+.slicknav_btn {
+    margin: 5px 5px 6px;
+    text-decoration: none;
+    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    background-color: #222222;
+}
+/* Button Text */
+.slicknav_menu .slicknav_menutxt {
+    color: #FFF;
+    font-weight: bold;
+    text-shadow: 0 1px 3px #000;
+}
+/* Button Lines */
+.slicknav_menu .slicknav_icon-bar {
+    background-color: #f5f5f5;
+}
+.slicknav_menu {
+    background: #4c4c4c;
+    padding: 5px;
+}
+.slicknav_nav {
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    font-size: 0.875em;
+}
+.slicknav_nav, .slicknav_nav ul {
+    list-style: none;
+    overflow: hidden;
+}
+.slicknav_nav ul {
+    padding: 0;
+    margin: 0 0 0 20px;
+}
+.slicknav_nav .slicknav_item {
+    padding: 5px 10px;
+    margin: 2px 5px;
+}
+.slicknav_nav a {
+    padding: 5px 10px;
+    margin: 2px 5px;
+    text-decoration: none;
+    color: #fff;
+}
+.slicknav_nav .slicknav_item a {
+    padding: 0;
+    margin: 0;
+}
+.slicknav_nav .slicknav_item:hover {
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+    background: #ccc;
+    color: #fff;
+}
+.slicknav_nav a:hover {
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+    background: #ccc;
+    color: #222;
+}
+.slicknav_nav .slicknav_txtnode {
+    margin-left: 15px;
+}
